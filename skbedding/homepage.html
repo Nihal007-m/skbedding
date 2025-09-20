@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bedding Collection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Smooth fade animation */
+    .fade-in {
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-tight">SK BEDDING</h1>
+      <nav class="space-x-6 hidden md:block">
+        <a href="normal.html" class="hover:text-gray-500">Girl</a>
+        <a href="1" class="hover:text-gray-500">Boys</a>
+        <a href="#" class="hover:text-gray-500">Baby</a>
+        <a href="#" class="hover:text-gray-500">Women</a>
+        <a href="contact_info.html" class="hover:text-gray-500">Contact Us</a>
+        <a href="#" class="hover:text-gray-500">Home</a>
+      </nav>
+      <button class="bg-red-200-text-white px-4 py-2 rounded hover:bg-red-700">Checkout</button>
+    </div>
+  </header>
+
+  <!-- Banner -->
+
+    <!-- Hero Section -->
+    <section class="relative bg-white max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center md:items-start gap-8 mt-8">
+      <div class="flex-1 z-10">
+        <span class="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full mb-4 text-sm font-medium">New</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Premium Bedsheets for Restful Sleep</h1>
+        <p class="text-lg text-gray-600 mb-6">Discover our production-ready bedding collection. Soft, modern, and 100% customizable for your comfort.</p>
+        <form class="flex items-center gap-2 mb-6">
+          <div class="relative flex-1">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </span>
+            <input type="email" placeholder="Your mail address" class="pl-10 pr-4 py-3 w-full rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-200" required>
+          </div>
+          <button type="submit" class="bg-gray-900 text-white px-5 py-3 rounded font-semibold hover:bg-gray-700 transition">Get Started</button>
+        </form>
+        <ul class="space-y-2 text-lg text-gray-700">
+          <li>• Faster</li>
+          <li>• Modern</li>
+          <li>• 100% Customizable</li>
+        </ul>
+      </div>
+      <div class="flex-1 hidden md:block relative">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80" alt="Premium bedding" class="rounded-xl shadow-lg w-full h-96 object-cover">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none"></div>
+    </section>
+
+  <!-- Modern Filter Bar -->
+  <div class="max-w-7xl mx-auto px-4 mb-8">
+    <div class="flex justify-center md:justify-start gap-2">
+      <button class="filter-btn flex items-center gap-2 px-5 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition shadow-sm border border-gray-200" data-filter="all">
+        <svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><circle cx='12' cy='12' r='10' stroke-width='2' stroke='currentColor' fill='none'/></svg>
+        All
+      </button>
+      <button class="filter-btn flex items-center gap-2 px-5 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition shadow-sm border border-gray-200" data-filter="new">
+        <svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 4v16m8-8H4'/></svg>
+        New In
+      </button>
+      <button class="filter-btn flex items-center gap-2 px-5 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition shadow-sm border border-gray-200" data-filter="sale>
+        <svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 13l4 4L19 7'/></svg>
+        Clearance
+      </button>
+      
+      <button class="filter-btn flex items-center gap-2 px-5 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition shadow-sm border border-gray-200" data-filter="cotton">
+        <svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8c-2.21 0-4 1.79-4 4 0 2.21 1.79 4 4 4s4-1.79 4-4c0-2.21-1.79-4-4-4z'/></svg>
+        100% Cotton
+      </button>
+      <button class="filter-btn flex items-center gap-2 px-5 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition shadow-sm border border-gray-200" data-filter="panel">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 7.5h-.75A2.25 2.25 0 0 0 4.5 9.75v7.5a2.25 2.25 0 0 0 2.25 2.25h7.5a2.25 2.25 0 0 0 2.25-2.25v-7.5a2.25 2.25 0 0 0-2.25-2.25h-.75m0-3l-3-3m0 0l-3 3m3-3v11.25m6-2.25h.75a2.25 2.25 0 0 1 2.25 2.25v7.5a2.25 2.25 0 0 1-2.25 2.25h-7.5a2.25 2.25 0 0 1-2.25-2.25v-.75"/></svg>
+        Panel
+      </button>
+    </div>
+  </div>
+
+  <!-- Product Grid -->
+  <main class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+    <!-- Example product card -->
+    <a href="product.html?item=pumpkin-print-bedding" class="product-card fade-in bg-white shadow-sm rounded overflow-hidden hover:shadow-lg transition p-2 block cursor-pointer" data-category="new">
+      <img src="https://via.placeholder.com/200x150" alt="Pumpkin Print Bedding" class="w-full h-32 object-cover">
+      <h3 class="mt-2 font-medium text-gray-700">Pumpkin Print Bedding</h3>
+      <p class="text-gray-500 text-sm">Soft cotton blend</p>
+      <p class="text-gray-900 font-semibold mt-1">€45</p>
+    </a>
+
+    <!-- Duplicate for 64 items -->
+    <!-- You can loop dynamically in backend, here just copied few -->
+    <a href="product.html?item=floral-red-bedding" class="product-card fade-in bg-white shadow-sm rounded overflow-hidden hover:shadow-lg transition p-2 block cursor-pointer" data-category="sale">
+      <img src="https://via.placeholder.com/200x150" alt="Floral Red Bedding" class="w-full h-32 object-cover">
+      <h3 class="mt-2 font-medium text-gray-700">Floral Red Bedding</h3>
+      <p class="text-gray-500 text-sm">Muted tones</p>
+      <p class="text-gray-900 font-semibold mt-1">€39</p>
+    </a>
+
+    <a href="product.html?item=white-minimal-bedding" class="product-card fade-in bg-white shadow-sm rounded overflow-hidden hover:shadow-lg transition p-2 block cursor-pointer" data-category="cotton">
+      <img src="https://via.placeholder.com/200x150" alt="White Minimal Bedding" class="w-full h-32 object-cover">
+      <h3 class="mt-2 font-medium text-gray-700">White Minimal Bedding</h3>
+      <p class="text-gray-500 text-sm">100% Cotton</p>
+      <p class="text-gray-900 font-semibold mt-1">€55</p>
+    </a>
+
+    <a href="product.html?item=floral-red-bedding-panel" class="product-card fade-in bg-white shadow-sm rounded overflow-hidden hover:shadow-lg transition p-2 block cursor-pointer" data-category="panel">
+      <img src="https://via.placeholder.com/200x150" alt="Floral Red Bedding Panel" class="w-full h-32 object-cover">
+      <h3 class="mt-2 font-medium text-gray-700">Floral Red Bedding</h3>
+      <p class="text-gray-500 text-bold">Muted tones</p>
+      <p class="text-gray-900 font- mt-1">€39</p>
+    </a>
+
+    <!-- Repeat until 8×8 grid is filled -->
+  </main>
+
+  <!-- JavaScript for filtering -->
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.product-card').forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

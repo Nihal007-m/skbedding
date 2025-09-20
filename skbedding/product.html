@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | SK Bedding</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+  <header class="bg-white shadow-md mb-8">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-tight">SK BEDDING</h1>
+      <nav class="space-x-6 hidden md:block">
+        <a href="homepage.html" class="hover:text-gray-500">Home</a>
+        <a href="contact_info.html" class="hover:text-gray-500">Contact Us</a>
+      </nav>
+      <button class="bg-red-200 text-white px-4 py-2 rounded hover:bg-red-700">Checkout</button>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-8 fade-in">
+    <div id="product-detail" class="bg-white rounded-xl shadow-lg p-8 flex flex-col md:flex-row gap-8 items-center">
+      <img id="product-img" src="https://via.placeholder.com/400x300" alt="Product Image" class="rounded-xl shadow w-full md:w-96 h-64 object-cover mb-6 md:mb-0">
+      <div class="flex-1">
+        <h2 id="product-title" class="text-3xl font-extrabold mb-2">Product Name</h2>
+        <p id="product-desc" class="text-gray-600 mb-4">Product description goes here.</p>
+        <ul id="product-features" class="mb-4 space-y-2 text-gray-700">
+          <li>• Feature 1</li>
+          <li>• Feature 2</li>
+          <li>• Feature 3</li>
+        </ul>
+        <div class="mb-4 text-gray-700" id="product-size"></div>
+        <div class="text-2xl font-bold text-gray-900 mb-6" id="product-price">€00</div>
+        <button class="bg-gray-900 text-white px-6 py-3 rounded font-semibold hover:bg-gray-700 transition">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Simple product data for demo
+    const products = {
+      'pumpkin-print-bedding': {
+        title: 'Pumpkin Print Bedding',
+        desc: 'Soft cotton blend. Perfect for autumn vibes and cozy nights.',
+        img: 'https://via.placeholder.com/400x300',
+        price: '€45',
+        features: ['Soft cotton blend', 'Autumn print', 'Machine washable']
+      },
+      'floral-red-bedding': {
+        title: 'Floral Red Bedding',
+        desc: 'Muted tones with a floral pattern. Adds elegance to any room.',
+        img: 'https://via.placeholder.com/400x300',
+        price: '€39',
+        features: ['Muted tones', 'Floral design', 'Easy care']
+      },
+      'white-minimal-bedding': {
+        title: 'White Minimal Bedding',
+        desc: '100% Cotton. Minimalist style for a clean look.',
+        img: 'https://via.placeholder.com/400x300',
+        price: '€55',
+        features: ['100% Cotton', 'Minimalist design', 'Breathable fabric']
+      },
+      'floral-red-bedding-panel': {
+        title: 'Floral Red Bedding Panel',
+        desc: 'Muted tones, panel style. Elegant and modern.',
+        img: 'https://via.placeholder.com/400x300',
+        price: '€39',
+        features: ['Muted tones', 'Panel style', 'Durable material'],
+        size: ['Single', 'Double', 'Queen', 'King']
+      }
+    };
+
+    // Get product from query string
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+    const item = getQueryParam('item');
+    if (item && products[item]) {
+      document.getElementById('product-title').textContent = products[item].title;
+      document.getElementById('product-desc').textContent = products[item].desc;
+      document.getElementById('product-img').src = products[item].img;
+      document.getElementById('product-img').alt = products[item].title;
+      document.getElementById('product-price').textContent = products[item].price;
+      document.getElementById('product-features').innerHTML = products[item].features.map(f => `<li>• ${f}</li>`).join('');
+      if (products[item].size) {
+        document.getElementById('product-size').textContent = 'Available sizes: ' + products[item].size.join(', ');
+      } else {
+        document.getElementById('product-size').textContent = '';
+      }
+    }
+  </script>
+</body>
+</html>
